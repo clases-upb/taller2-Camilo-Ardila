@@ -214,6 +214,42 @@ public class App {
      * está mal con los porcentajes o con las notas, retorne -1.
      */
 
+    public static float Calcular_para_ganar(float n1, float n2, float n3, float n4, float v1, float v2, float v3, float v4, float v5){
+    
+        try {
+        float nota_necesaria = 0;
+        
+        float
+        nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0, notas = 0;
+        
+        final int n_min = 0;
+        final int n_max = 5;
+        final int n_ganada = 3;
+        
+        if(n1 >= n_min && n1 <= n_max && n2 >= n_min && n2 <= n_max && n3 >= n_min && n3 <= n_max && n4 >= n_min && n4 <= n_max && (v1 + v2 + v3 + v4 + v5) == 1){
+            
+            nota1 = n1 * v1;
+            nota2 = n2 * v2;
+            nota3 = n3 * v3;
+            nota4 = n4 * v4;
+            
+            notas = nota1 + nota2 + nota3 + nota4;
+            
+            nota_necesaria = (n_ganada - notas) / v5;
+            
+            return nota_necesaria;
+        }
+        
+        else{
+            return -1;
+        }
+        
+        catch {
+            // TODO: handle exception
+            return -1;
+        }
+    
+    }
 
     /*
      * 6. Diseñe un algoritmo e implemente la función Calcular_salario que
